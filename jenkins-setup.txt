@@ -1,0 +1,43 @@
+# Jenkins Setup and installation
+
+    ## Linux
+    https://jenkins.io/doc/book/installing/#linux
+
+    ## Windows
+    https://jenkins.io/doc/book/installing/#windows
+
+
+# Setting up and running Jenkins on Docker
+
+Official Documentation: https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/
+
+Official Docker Repo: https://hub.docker.com/r/jenkinsci/blueocean/
+
+# On macOS and Linux
+    1. Run the jenkinsci/blueocean image as a container in Docker using the following docker run command
+
+    $ docker run \
+      --rm \
+      -u root \
+      -p 8080:8080 \
+      -v jenkins-data:/var/jenkins_home \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v "$HOME":/home \
+      jenkinsci/blueocean
+
+    2. Proceed to the Setup wizard.
+
+# On Windows
+
+    1. Run the jenkinsci/blueocean image as a container in Docker using the following docker run command
+
+    docker run ^
+      --rm ^
+      -u root ^
+      -p 8080:8080 ^
+      -v jenkins-data:/var/jenkins_home ^
+      -v /var/run/docker.sock:/var/run/docker.sock ^
+      -v "%HOMEPATH%":/home ^
+      jenkinsci/blueocean
+
+    2. Proceed to the Setup wizard
